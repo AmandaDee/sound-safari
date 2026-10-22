@@ -1,0 +1,49 @@
+filename,sound_id,example_words
+a.mp3,a,cat; crab; ant; apple; bag
+ah.mp3,ah,car; star; heart; jar; grass
+ai.mp3,ai,rain; snail; train; rainbow; sailboat
+air.mp3,air,bear; hair; pear; armchair
+b.mp3,b,bed; box; bus; boat; book
+ch.mp3,ch,chick; peach; sandwich; chestnut; armchair
+d.mp3,d,dog; bed; duck; bird; bread
+e.mp3,e,bed; hen; net; bell; bread
+ear.mp3,ear,deer
+ee.mp3,ee,tree; sheep; bee; key; leaf
+f.mp3,f,fox; fish; frog; flag; flower
+g.mp3,g,dog; pig; goat; frog; bag
+h.mp3,h,hen; hair; hand; heart; horse
+i.mp3,i,ship; pig; fish; chick; dish
+igh.mp3,igh,light; lion; pie; butterfly; rhino
+ire.mp3,ire,firework
+j.mp3,j,jam; jar; jet; jellyfish; hedgehog
+k.mp3,k,cat; cup; sock; duck; book
+kw.mp3,kw,queen; squirrel
+l.mp3,l,snail; ball; bell; bowl; cloud
+m.mp3,m,moon; drum; jam; mouse; snowman
+n.mp3,n,rain; sun; hen; net; moon
+ng.mp3,ng,ring; wing; king; flamingo; kangaroo
+o.mp3,o,dog; fox; box; sock; shop
+oa.mp3,oa,boat; goat; bowl; coat; ghost
+oi.mp3,oi,coin
+oo-long.mp3,oo-long,moon; boot; shoe; spoon; toothbrush
+oo-short.mp3,oo-short,book; football; footprint
+or.mp3,or,ball; corn; door; fork; horse
+ou.mp3,ou,cow; cloud; crown; flower; house
+p.mp3,p,ship; pig; cup; shop; sheep
+r.mp3,r,rain; tree; frog; crab; bread
+s.mp3,s,sun; bus; sock; star; snail
+schwa.mp3,schwa,flower; lion; sunflower; thunderstorm; letterbox
+sh.mp3,sh,ship; fish; shop; sheep; brush
+t.mp3,t,cat; net; boat; star; tree
+th.mp3,th,toothbrush; thunderstorm; bathroom
+th-voiced.mp3,th-voiced,feather
+ts.mp3,ts,pretzel; pizza
+u.mp3,u,sun; cup; bus; duck; brush
+ul.mp3,ul,apple; eagle; turtle
+ur.mp3,ur,bird; ladybird; turkey; turtle; hamburger
+v.mp3,v,vest; beaver; avocado; violin
+w.mp3,w,web; wheel; wing; sandwich; stopwatch
+wi.mp3,wi,penguin
+x.mp3,x,fox; box; ox; letterbox; postbox
+yoo.mp3,yoo,unicorn; cucumber; ambulance
+z.mp3,z,zip

@@ -1,0 +1,17 @@
+{
+  "name": "sound-safari",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Picture-based phonics blending game",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test",
+    "check": "node --check app.js && node --check game.js && node --check challenges.js && node --check audio-player.js && node --check audio-manifest.js && node --check progress.js && node --check progress-ui.js",
+    "build": "node scripts/build.js",
+    "audio:optimise": "node scripts/optimise-audio.js",
+    "audio:check": "node scripts/check-audio.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Sound Safari: picture-based phonics blending challenges with friendly animal teachers."
+          name="description">
+    <title>Sound Safari</title>
+    <link href="favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="challenges.js"></script>
+    <script defer src="game.js"></script>
+    <script defer src="progress.js"></script>
+    <script defer src="audio-manifest.js"></script>
+    <script defer src="audio-player.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="progress-ui.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to the game</a>
+<header class="site-header">
+    <nav aria-label="Main navigation" class="navbar">
+        <a aria-label="Amanda Bamford — home" class="logo"
+           href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/">AB<span aria-hidden="true">.</span></a>
+        <ul class="nav-links">
+            <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#about">About</a></li>
+            <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#projects">Projects</a></li>
+            <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#hobbies">Making</a></li>
+        </ul>
+        <a class="nav-button" href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/assets/cv.pdf"
+           rel="noopener noreferrer" target="_blank">Download CV</a>
+    </nav>
+</header>
+<section aria-labelledby="safari-title" class="safari-intro">
+    <p class="safari-eyebrow">PHONICS PRACTICE</p>
+    <h1 id="safari-title">Sound <span>Safari</span></h1>
+    <p class="safari-description">Blend the sounds, find the picture and learn with your animal teacher. Tap a sound
+        whenever you need a little help.</p>
+</section>
+<div id="safari-revised">
+    <div class="sf-app">
+        <div class="sf-stage-selector">
+            <span class="sf-stage-eyebrow" id="sf-stage-label">CHOOSE YOUR ADVENTURE</span>
+            <div aria-labelledby="sf-stage-label" class="sf-stage-cards" id="sf-level" role="group">
+                <button aria-pressed="true" class="sf-stage-card" data-stage="ks1" type="button">
+                    <span class="sf-stage-top"><strong>KS1</strong><span aria-hidden="true"
+                                                                         class="sf-stage-check">✓</span></span>
+                    <span class="sf-stage-name">Little explorers</span>
+                    <span class="sf-stage-description">Short words &amp; sound teams</span>
+                    <span class="sf-stage-count">100 challenges</span>
+                </button>
+                <button aria-pressed="false" class="sf-stage-card" data-stage="ks2" type="button">
+                    <span class="sf-stage-top"><strong>KS2</strong><span aria-hidden="true"
+                                                                         class="sf-stage-check">✓</span></span>
+                    <span class="sf-stage-name">Growing adventurers</span>
+                    <span class="sf-stage-description">Longer words &amp; spelling patterns</span>
+                    <span class="sf-stage-count">100 challenges</span>
+                </button>
+            </div>
+        </div>
+        <nav aria-label="Choose your teacher"><span>Your teacher</span>
+            <button aria-pressed="true" class="cursor-interaction" data-animal="lion" type="button">Lion</button>
+            <button aria-pressed="false" class="cursor-interaction" data-animal="fox" type="button">Fox</button>
+            <button aria-pressed="false" class="cursor-interaction" data-animal="bear" type="button">Bear</button>
+            <button aria-pressed="false" class="cursor-interaction" data-animal="snake" type="button">Snake</button>
+        </nav>
+        <main id="main-content">
+            <div class="sf-scene">
+                <div aria-hidden="true" class="sf-sun"></div>
+                <div aria-hidden="true" class="sf-hill sf-back"></div>
+                <div aria-hidden="true" class="sf-hill sf-front"></div>
+                <div class="sf-guide">
+                    <div aria-label="Friendly cartoon lion" class="sf-animal lion" role="img">
+                        <div class="sf-ear left"></div>
+                        <div class="sf-ear right"></div>
+                        <div class="sf-mane"></div>
+                        <div class="sf-face">
+                            <div class="sf-eye left"></div>
+                            <div class="sf-eye right"></div>
+                            <div class="sf-muzzle">
+                                <div class="sf-nose"></div>
+                                <div class="sf-smile"></div>
+                            </div>
+                            <div class="sf-cheek left"></div>
+                            <div class="sf-cheek right"></div>
+                        </div>
+                        <div class="sf-body"></div>
+                        <div aria-hidden="true" class="sf-celebration-hearts"><span>♥</span><span>♥</span><span>♥</span>
+                        </div>
+                        <div class="sf-paw left"></div>
+                        <div class="sf-paw right"></div>
+                    </div>
+                    <span class="sf-name">Leo the lion</span></div>
+                <div class="sf-challenge">
+                    <p class="sf-audio-hint">Tap a sound to hear it.</p>
+                    <div aria-label="Word to blend" class="sf-word"><span>sh</span><span>i</span><span>p</span></div>
+                    <button id="sf-sequence" type="button">Listen &amp; blend</button>
+                    <span aria-live="polite" class="sf-secret-label" id="sf-audio-status"></span>
+                </div>
+            </div>
+            <div aria-label="Picture answers" class="sf-answers"></div>
+            <div class="sf-actions">
+                <button class="sf-primary cursor-interaction" hidden id="sf-next" type="button">Next discovery →
+                </button>
+                <button class="sf-secondary cursor-interaction" id="sf-hint" type="button">Give me a hint</button>
+            </div>
+            <p aria-live="polite" class="sf-feedback">Take your time. Say the word aloud.</p>
+        </main>
+        <footer><span>No timer. Explore at your pace.</span><span>100 challenges in each stage</span></footer>
+    </div>
+    <section aria-labelledby="sf-progress-title" class="sf-progress" id="sf-progress">
+        <div class="sf-progress-top"><span class="sf-progress-eyebrow">YOUR PROGRESS</span><span id="sf-progress-level">KS1 trail</span>
+        </div>
+        <h2 id="sf-progress-title">Your safari <span>passport.</span></h2>
+        <p>Every word is a new discovery. Collect stamps with all your safari friends.</p>
+        <div class="sf-passport-card">
+            <div class="sf-passport-totals"><strong id="sf-explored-total">0 of 100 words explored</strong><span
+                    id="sf-next-stamp">1 more word to your next stamp</span></div>
+            <progress aria-label="Words explored" id="sf-passport-progress" max="100" value="0"></progress>
+            <div aria-label="Animal passport stamps" class="sf-passport-stamps" id="sf-passport-stamps"></div>
+            <p aria-live="polite" class="sf-progress-detail" id="sf-stamp-detail"></p>
+        </div>
+        <section aria-labelledby="sf-collection-title" class="sf-progress-collection">
+            <span class="sf-progress-eyebrow">LITTLE SOUNDS. BIG DISCOVERIES.</span>
+            <h2 id="sf-collection-title">Your sound <span>collection.</span></h2>
+            <p>Tap a pattern to see the words you’ve explored.</p>
+            <div aria-label="Sound pattern group" class="sf-pattern-groups">
+                <button aria-pressed="true" data-pattern-group="teams" type="button">Letter teams</button>
+                <button aria-pressed="false" data-pattern-group="letters" type="button">Letter sounds</button>
+            </div>
+            <div class="sf-collection-totals"><strong id="sf-pattern-total"></strong><span>✓ Explored &nbsp; ○ Still to discover</span>
+            </div>
+            <div aria-label="Sound patterns" class="sf-sound-collection" id="sf-sound-collection"></div>
+            <div class="sf-pattern-selection"><strong id="sf-selected-pattern"></strong>
+                <div><strong id="sf-pattern-detail-title"></strong>
+                    <p id="sf-pattern-detail-words"></p></div>
+            </div>
+            <p class="sf-progress-note">A pattern is explored when you answer a word containing it correctly. It shows
+                practice, not mastery.</p>
+        </section>
+        <p class="sf-progress-note" id="sf-progress-storage"></p>
+    </section>
+</div>
+<noscript>Please enable JavaScript to play Sound Safari.</noscript>
+<footer class="site-footer">
+    <p>&copy; 2026 Amanda Bamford.</p>
+    <p>Built with HTML5, CSS3 &amp; JavaScript.</p>
+</footer>
+</body>
+</html>
