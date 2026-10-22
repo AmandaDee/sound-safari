@@ -4,6 +4,9 @@
     padding: 12px 0;
     color-scheme: light dark
 }
+#safari-revised .sf-word {
+    --sound-count: 3;
+}
 
 #safari-revised .sf-app {
     --sf-ink: light-dark(#272449, #f4efff);

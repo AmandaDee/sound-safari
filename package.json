@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node scripts/serve.js",
     "test": "node --test",
-    "check": "node --check app.js && node --check game.js && node --check challenges.js && node --check audio-player.js && node --check audio-manifest.js && node --check progress.js && node --check progress-ui.js",
+    "check": "node --check app.js && node --check game.js && node --check challenges.js && node --check audio-player.js && node --check audio-manifest.js && node --check progress.js && node --check progress-ui.js && node --check phonics.js",
     "build": "node scripts/build.js",
+    "deploy": "npm run build && npx --yes wrangler deploy --config wrangler.workers.json",
     "audio:optimise": "node scripts/optimise-audio.js",
     "audio:check": "node scripts/check-audio.js"
   },
