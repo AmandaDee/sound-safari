@@ -1,7 +1,7 @@
 filename,sound_id,example_words
 a.mp3,a,cat; crab; ant; apple; bag
 ah.mp3,ah,car; star; heart; jar; grass
-ai.mp3,ai,rain; snail; train; rainbow; sailboat
+ai.mp3,ai,rain; snail; train; rainbow; sailboat; cake; snake
 air.mp3,air,bear; hair; pear; armchair
 b.mp3,b,bed; box; bus; boat; book
 ch.mp3,ch,chick; peach; sandwich; chestnut; armchair
@@ -13,7 +13,7 @@ f.mp3,f,fox; fish; frog; flag; flower
 g.mp3,g,dog; pig; goat; frog; bag
 h.mp3,h,hen; hair; hand; heart; horse
 i.mp3,i,ship; pig; fish; chick; dish
-igh.mp3,igh,light; lion; pie; butterfly; rhino
+igh.mp3,igh,light; lion; pie; butterfly; rhino; bike; kite
 ire.mp3,ire,firework
 j.mp3,j,jam; jar; jet; jellyfish; hedgehog
 k.mp3,k,cat; cup; sock; duck; book
@@ -23,9 +23,9 @@ m.mp3,m,moon; drum; jam; mouse; snowman
 n.mp3,n,rain; sun; hen; net; moon
 ng.mp3,ng,ring; wing; king; flamingo; kangaroo
 o.mp3,o,dog; fox; box; sock; shop
-oa.mp3,oa,boat; goat; bowl; coat; ghost
+oa.mp3,oa,boat; goat; bowl; coat; ghost; bone; telescope
 oi.mp3,oi,coin
-oo-long.mp3,oo-long,moon; boot; shoe; spoon; toothbrush
+oo-long.mp3,oo-long,moon; boot; shoe; spoon; toothbrush; flute
 oo-short.mp3,oo-short,book; football; footprint
 or.mp3,or,ball; corn; door; fork; horse
 ou.mp3,ou,cow; cloud; crown; flower; house
@@ -45,5 +45,5 @@ v.mp3,v,vest; beaver; avocado; violin
 w.mp3,w,web; wheel; wing; sandwich; stopwatch
 wi.mp3,wi,penguin
 x.mp3,x,fox; box; ox; letterbox; postbox
-yoo.mp3,yoo,unicorn; cucumber; ambulance
-z.mp3,z,zip
+yoo.mp3,yoo,unicorn; cucumber; ambulance; cube
+z.mp3,z,zip; rose

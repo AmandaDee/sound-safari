@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const {createAudioPlayer} = require('../audio-player');
 const challenges = require('../challenges');
 const manifest = require('../audio-manifest');
+const {getSoundGroups} = require('../phonics');
 
 function fixture(options = {}) {
     const clips = [];
@@ -31,7 +32,7 @@ function fixture(options = {}) {
 
 test('all challenge segments map to safe, reusable audio files', () => {
     for (const challenge of Object.values(challenges).flat()) {
-        assert.equal(challenge.audioKeys.length, challenge.sounds.length);
+        assert.equal(challenge.audioKeys.length, getSoundGroups(challenge).length);
         for (const key of challenge.audioKeys) assert.match(manifest[key].src, /^audio\/[a-z0-9-]+\.mp3$/);
     }
     assert.equal(challenges.ks1.find(c => c.word === 'book').audioKeys[1], 'oo-short');

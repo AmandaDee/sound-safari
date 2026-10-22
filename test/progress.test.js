@@ -28,7 +28,7 @@ test('passport counts distinct solved words and keeps levels separate', () => {
     assert.equal(progress.snapshot('ks2').count, 0);
     progress.record('ks2', 'sunset');
     assert.equal(progress.snapshot('ks2').count, 1);
-    assert.equal(progress.snapshot('ks1').total, 100);
+    assert.equal(progress.snapshot('ks1').total, challenges.ks1.length);
 });
 
 test('the collection derives explored patterns from solved words', () => {
@@ -95,5 +95,5 @@ test('reaching stamp thresholds requires different words', () => {
         progress.record('ks1', challenge.word);
         assert.equal(progress.snapshot('ks1').count, index + 1);
     }
-    assert.equal(progress.snapshot('ks1').count, 100);
+    assert.equal(progress.snapshot('ks1').count, challenges.ks1.length);
 });

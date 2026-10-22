@@ -2,6 +2,7 @@
 (function (scope) {
     'use strict';
     const STORAGE_KEY = 'sound-safari.progress.v1';
+    const phonics = typeof module === 'object' && module.exports ? require('./phonics') : scope.SafariPhonics;
 
     function createProgress(challenges, storage = null) {
         const levels = Object.keys(challenges);
@@ -24,8 +25,8 @@
 
         function snapshot(level) {
             if (!Object.hasOwn(explored, level)) throw new Error('Unknown progress level');
-            const patterns = [...new Set(challenges[level].flatMap(c => c.sounds))].sort().map(pattern => {
-                const words = challenges[level].filter(c => c.sounds.includes(pattern)).map(c => c.word);
+            const patterns = [...new Set(challenges[level].flatMap(c => phonics.getPatterns(c)))].sort().map(pattern => {
+                const words = challenges[level].filter(c => phonics.getPatterns(c).includes(pattern)).map(c => c.word);
                 const foundWords = words.filter(word => explored[level].has(word));
                 return {pattern, words, foundWords, found: foundWords.length > 0};
             });

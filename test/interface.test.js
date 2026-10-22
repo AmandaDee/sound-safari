@@ -66,7 +66,7 @@ class Element {
 }
 
 function mount() {
-    const elements = Object.fromEntries(['.sf-animal', '.sf-name', '.sf-word', '.sf-answers', '.sf-feedback', '#sf-next', '#sf-hint', '#sf-level', '#sf-sequence', '#sf-audio-status'].map(key => [key, new Element()]));
+    const elements = Object.fromEntries(['.sf-animal', '.sf-name', '.sf-word', '.sf-answers', '.sf-feedback', '#sf-next', '#sf-hint', '#sf-level', '#sf-sequence', '#sf-audio-status', '#sf-sound-help'].map(key => [key, new Element()]));
     const teachers = ['lion', 'fox', 'bear', 'snake'].map(animal => {
         const button = new Element('button');
         button.dataset.animal = animal;
@@ -85,21 +85,27 @@ function mount() {
     const document = {getElementById: () => root, createElement: tag => new Element(tag)};
     const played = [];
     const recorded = [];
+    let audioState;
     vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8'), {
         document, window: {
             addEventListener() {
             }
-        }, SafariGame: {createGame}, SAFARI_CHALLENGES: challenges,
+        },
+        SafariGame: {createGame: bank => createGame(bank, {random: () => 0.999999})}, SAFARI_CHALLENGES: challenges,
         SAFARI_AUDIO_MANIFEST: require('../audio-manifest'),
+        SafariPhonics: require('../phonics'),
         SafariProgress: {store: {record: (...args) => recorded.push(args)}},
         SafariAudio: {
-            createAudioPlayer: () => ({
-                stop() {
-                }, play: (...args) => played.push(args)
-            })
+            createAudioPlayer: ({onState}) => {
+                audioState = onState;
+                return {
+                    stop() {
+                    }, play: (...args) => played.push(args)
+                };
+            }
         }
     });
-    return {elements, teachers, stages, played, recorded};
+    return {elements, teachers, stages, played, recorded, audioState};
 }
 
 test('picture-only answers, retries, teacher celebration and next are wired together', () => {
@@ -156,4 +162,48 @@ test('sound tiles and sequence use the phoneme files in word order', () => {
     assert.equal(played[0][1][0], 0);
     e['#sf-sequence'].click();
     assert.deepEqual(Array.from(played[1][0]), ['audio/sh.mp3', 'audio/i.mp3', 'audio/p.mp3']);
+});
+
+test('split vowels share playback, highlight together and never sound final e separately', () => {
+    const {elements: e, played, audioState} = mount();
+    for (const word of ['ship', 'cat', 'rain']) {
+        e['.sf-answers'].children.find(b => b.attributes['aria-label'] === word).click();
+        e['#sf-next'].click();
+    }
+    const tiles = e['.sf-word'].querySelectorAll();
+    assert.equal(tiles.map(tile => tile.children[0].textContent).join(''), 'cake');
+    assert.match(e['.sf-word'].className, /has-split/);
+    assert.equal(e['.sf-word'].children.at(-1).attributes['aria-hidden'], 'true');
+    tiles[1].click();
+    assert.deepEqual(Array.from(played.at(-1)[0]), ['audio/ai.mp3']);
+    assert.equal(played.at(-1)[1][0], 1);
+    const message = e['#sf-sound-help'].children;
+    assert.equal(message.map(node => node.textContent).join(''), 'a and e work together: one ai sound.');
+    assert.equal(message[1].tag, 'strong');
+    tiles[3].click();
+    assert.deepEqual(Array.from(played.at(-1)[0]), ['audio/ai.mp3']);
+    audioState({phase: 'playing', index: 1});
+    assert.deepEqual(tiles.map(tile => tile.className.includes('sf-playing')), [false, true, false, true]);
+    audioState({phase: 'playing', index: 2});
+    assert.deepEqual(tiles.map(tile => tile.className.includes('sf-playing')), [false, false, true, false]);
+    e['#sf-sequence'].click();
+    assert.deepEqual(Array.from(played.at(-1)[0]), ['audio/k.mp3', 'audio/ai.mp3', 'audio/k.mp3']);
+    e['.sf-answers'].children.find(b => b.attributes['aria-label'] === 'cake').click();
+    assert.match(e['.sf-feedback'].textContent, /c · ai · k → cake/);
+});
+
+test('spade uses the garden-tool emoji while retaining its accessible answer name', () => {
+    const {elements: e} = mount();
+    for (const challenge of challenges.ks1) {
+        if (challenge.word === 'spade') break;
+        e['.sf-answers'].children.find(b => b.attributes['aria-label'] === challenge.word).click();
+        e['#sf-next'].click();
+    }
+    const answer = e['.sf-answers'].children.find(b => b.attributes['aria-label'] === 'spade');
+    assert.equal(answer.children[0].tag, 'span');
+    assert.equal(answer.children[0].textContent, '🪏');
+    assert.equal(answer.children[0].attributes['aria-hidden'], 'true');
+    answer.click();
+    assert.match(e['.sf-feedback'].textContent, /spade/);
+    assert.equal(e['#sf-next'].hidden, false);
 });

@@ -1,4 +1,4 @@
-// Supply and review these recordings before enabling classroom audio.
+// Reusable pronunciation keys; recordings must be supplied and reviewed.
 const audioManifest = {
     "a": {
         "src": "audio/a.mp3",
@@ -27,7 +27,9 @@ const audioManifest = {
             "snail",
             "train",
             "rainbow",
-            "sailboat"
+            "sailboat",
+            "cake",
+            "snake"
         ]
     },
     "air": {
@@ -142,7 +144,9 @@ const audioManifest = {
             "lion",
             "pie",
             "butterfly",
-            "rhino"
+            "rhino",
+            "bike",
+            "kite"
         ]
     },
     "ire": {
@@ -235,7 +239,9 @@ const audioManifest = {
             "goat",
             "bowl",
             "coat",
-            "ghost"
+            "ghost",
+            "bone",
+            "telescope"
         ]
     },
     "oi": {
@@ -251,7 +257,8 @@ const audioManifest = {
             "boot",
             "shoe",
             "spoon",
-            "toothbrush"
+            "toothbrush",
+            "flute"
         ]
     },
     "oo-short": {
@@ -431,13 +438,15 @@ const audioManifest = {
         "examples": [
             "unicorn",
             "cucumber",
-            "ambulance"
+            "ambulance",
+            "cube"
         ]
     },
     "z": {
         "src": "audio/z.mp3",
         "examples": [
-            "zip"
+            "zip",
+            "rose"
         ]
     }
 };

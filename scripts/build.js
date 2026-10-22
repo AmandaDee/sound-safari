@@ -4,7 +4,7 @@ const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'dist');
 fs.rmSync(output, {recursive: true, force: true});
 fs.mkdirSync(output, {recursive: true});
-for (const file of ['index.html', 'styles.css', 'challenges.js', 'game.js', 'progress.js', 'progress-ui.js', 'audio-manifest.js', 'audio-player.js', 'app.js', 'favicon.svg']) {
+for (const file of ['index.html', 'styles.css', 'challenges.js', 'game.js', 'phonics.js', 'progress.js', 'progress-ui.js', 'audio-manifest.js', 'audio-player.js', 'app.js', 'favicon.svg']) {
     fs.copyFileSync(path.join(root, file), path.join(output, file));
 }
 fs.mkdirSync(path.join(output, 'audio'), {recursive: true});

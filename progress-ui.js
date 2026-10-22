@@ -9,7 +9,7 @@
         {animal: 'lion', name: 'Leo', title: 'First steps', target: 1},
         {animal: 'fox', name: 'Flo', title: 'Explorer', target: 10},
         {animal: 'bear', name: 'Bertie', title: 'Trail finder', target: 50},
-        {animal: 'snake', name: 'Sammy', title: 'Safari star', target: 100}
+        {animal: 'snake', name: 'Sammy', title: 'Safari star', target: null}
     ];
     let selectedStamp = 0;
     let selectedPattern = null;
@@ -50,6 +50,8 @@
     function render() {
         const level = stageGroup.querySelector('[aria-pressed="true"]').dataset.stage;
         const state = store.snapshot(level);
+        // The final stamp means the whole trail is complete, including new words.
+        stamps.at(-1).target = state.total;
         get('#sf-progress-level').textContent = `${level.toUpperCase()} trail`;
         get('#sf-explored-total').textContent = `${state.count} of ${state.total} words explored`;
         const progress = get('#sf-passport-progress');

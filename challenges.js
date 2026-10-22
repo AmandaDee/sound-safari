@@ -1,6 +1,6 @@
-// 100 KS1 and 100 KS2 picture blending challenges.
-// Review spellings and pronunciation against your chosen phonics programme.
-// Some advanced KS2 tiles represent word parts, not a single phoneme.
+// 115 KS1 and 108 KS2 picture blending challenges.
+// Split digraphs use soundGroups to link non-adjacent written tiles.
+// Review against your school phonics programme; some KS2 tiles are word parts.
 const challenges = {
     "ks1": [
         {
@@ -86,6 +86,750 @@ const challenges = {
                 "ai",
                 "n"
             ]
+        },
+        {
+            "word": "cake",
+            "sounds": [
+                "c",
+                "a",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "k",
+                "ai",
+                "k"
+            ],
+            "soundLabels": [
+                "c",
+                "ai",
+                "k"
+            ],
+            "choices": [
+                [
+                    "cake",
+                    "🍰"
+                ],
+                [
+                    "cat",
+                    "🐈"
+                ],
+                [
+                    "coat",
+                    "🧥"
+                ]
+            ],
+            "hint": "a and e work together. Blend c, ai, k."
+        },
+        {
+            "word": "bike",
+            "sounds": [
+                "b",
+                "i",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "b",
+                "igh",
+                "k"
+            ],
+            "soundLabels": [
+                "b",
+                "igh",
+                "k"
+            ],
+            "choices": [
+                [
+                    "kite",
+                    "🪁"
+                ],
+                [
+                    "bike",
+                    "🚲"
+                ],
+                [
+                    "boat",
+                    "⛵"
+                ]
+            ],
+            "hint": "i and e work together, like the vowel sound in night."
+        },
+        {
+            "word": "kite",
+            "sounds": [
+                "k",
+                "i",
+                "t",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "k",
+                "igh",
+                "t"
+            ],
+            "soundLabels": [
+                "k",
+                "igh",
+                "t"
+            ],
+            "choices": [
+                [
+                    "bike",
+                    "🚲"
+                ],
+                [
+                    "key",
+                    "🔑"
+                ],
+                [
+                    "kite",
+                    "🪁"
+                ]
+            ],
+            "hint": "Keep i and e linked. Say the three sounds, then blend."
+        },
+        {
+            "word": "snake",
+            "sounds": [
+                "s",
+                "n",
+                "a",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "s",
+                "n",
+                "ai",
+                "k"
+            ],
+            "soundLabels": [
+                "s",
+                "n",
+                "ai",
+                "k"
+            ],
+            "choices": [
+                [
+                    "snake",
+                    "🐍"
+                ],
+                [
+                    "snail",
+                    "🐌"
+                ],
+                [
+                    "skate",
+                    "🛼"
+                ]
+            ],
+            "hint": "a and e make the same vowel sound as in cake."
+        },
+        {
+            "word": "grapes",
+            "sounds": [
+                "g",
+                "r",
+                "a",
+                "p",
+                "e",
+                "s"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ],
+                [
+                    5
+                ]
+            ],
+            "audioKeys": [
+                "g",
+                "r",
+                "ai",
+                "p",
+                "s"
+            ],
+            "soundLabels": [
+                "g",
+                "r",
+                "ai",
+                "p",
+                "s"
+            ],
+            "choices": [
+                [
+                    "goat",
+                    "🐐"
+                ],
+                [
+                    "grapes",
+                    "🍇"
+                ],
+                [
+                    "grass",
+                    "🌱"
+                ]
+            ],
+            "hint": "Link a and e, then remember the s at the end."
+        },
+        {
+            "word": "plane",
+            "sounds": [
+                "p",
+                "l",
+                "a",
+                "n",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "p",
+                "l",
+                "ai",
+                "n"
+            ],
+            "soundLabels": [
+                "p",
+                "l",
+                "ai",
+                "n"
+            ],
+            "choices": [
+                [
+                    "plate",
+                    "🍽️"
+                ],
+                [
+                    "train",
+                    "🚆"
+                ],
+                [
+                    "plane",
+                    "✈️"
+                ]
+            ],
+            "hint": "a and e work together. Start with p, then l."
+        },
+        {
+            "word": "whale",
+            "sounds": [
+                "wh",
+                "a",
+                "l",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "w",
+                "ai",
+                "l"
+            ],
+            "soundLabels": [
+                "wh",
+                "ai",
+                "l"
+            ],
+            "choices": [
+                [
+                    "whale",
+                    "🐋"
+                ],
+                [
+                    "wheel",
+                    "🛞"
+                ],
+                [
+                    "shell",
+                    "🐚"
+                ]
+            ],
+            "hint": "wh represents one sound here. Link a and e too."
+        },
+        {
+            "word": "bone",
+            "sounds": [
+                "b",
+                "o",
+                "n",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "b",
+                "oa",
+                "n"
+            ],
+            "soundLabels": [
+                "b",
+                "oa",
+                "n"
+            ],
+            "choices": [
+                [
+                    "boat",
+                    "⛵"
+                ],
+                [
+                    "bone",
+                    "🦴"
+                ],
+                [
+                    "book",
+                    "📕"
+                ]
+            ],
+            "hint": "o and e make the same vowel sound as oa in boat."
+        },
+        {
+            "word": "rose",
+            "sounds": [
+                "r",
+                "o",
+                "s",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "r",
+                "oa",
+                "z"
+            ],
+            "soundLabels": [
+                "r",
+                "oa",
+                "z"
+            ],
+            "choices": [
+                [
+                    "rain",
+                    "🌧️"
+                ],
+                [
+                    "ring",
+                    "💍"
+                ],
+                [
+                    "rose",
+                    "🌹"
+                ]
+            ],
+            "hint": "Link o and e. The s sounds like z in this word."
+        },
+        {
+            "word": "cube",
+            "sounds": [
+                "c",
+                "u",
+                "b",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ]
+            ],
+            "audioKeys": [
+                "k",
+                "yoo",
+                "b"
+            ],
+            "soundLabels": [
+                "c",
+                "yoo",
+                "b"
+            ],
+            "choices": [
+                [
+                    "cube",
+                    "🧊"
+                ],
+                [
+                    "cup",
+                    "☕"
+                ],
+                [
+                    "corn",
+                    "🌽"
+                ]
+            ],
+            "hint": "u and e work together, as in cute."
+        },
+        {
+            "word": "flute",
+            "sounds": [
+                "f",
+                "l",
+                "u",
+                "t",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "f",
+                "l",
+                "oo-long",
+                "t"
+            ],
+            "soundLabels": [
+                "f",
+                "l",
+                "oo",
+                "t"
+            ],
+            "choices": [
+                [
+                    "flag",
+                    "🚩"
+                ],
+                [
+                    "flute",
+                    "🪈"
+                ],
+                [
+                    "flower",
+                    "🌼"
+                ]
+            ],
+            "hint": "Here u and e make the oo sound, as in moon."
+        },
+        {
+            "word": "slide",
+            "sounds": [
+                "s",
+                "l",
+                "i",
+                "d",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "s",
+                "l",
+                "igh",
+                "d"
+            ],
+            "soundLabels": [
+                "s",
+                "l",
+                "igh",
+                "d"
+            ],
+            "choices": [
+                [
+                    "snail",
+                    "🐌"
+                ],
+                [
+                    "snake",
+                    "🐍"
+                ],
+                [
+                    "slide",
+                    "🛝"
+                ]
+            ],
+            "hint": "Start s, l. Link i and e, then add d."
+        },
+        {
+            "word": "skate",
+            "sounds": [
+                "s",
+                "k",
+                "a",
+                "t",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "s",
+                "k",
+                "ai",
+                "t"
+            ],
+            "soundLabels": [
+                "s",
+                "k",
+                "ai",
+                "t"
+            ],
+            "choices": [
+                [
+                    "skate",
+                    "🛼"
+                ],
+                [
+                    "kite",
+                    "🪁"
+                ],
+                [
+                    "sock",
+                    "🧦"
+                ]
+            ],
+            "hint": "Link a and e and blend from the start."
+        },
+        {
+            "word": "plate",
+            "sounds": [
+                "p",
+                "l",
+                "a",
+                "t",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "p",
+                "l",
+                "ai",
+                "t"
+            ],
+            "soundLabels": [
+                "p",
+                "l",
+                "ai",
+                "t"
+            ],
+            "choices": [
+                [
+                    "plane",
+                    "✈️"
+                ],
+                [
+                    "plate",
+                    "🍽️"
+                ],
+                [
+                    "pot",
+                    "🍲"
+                ]
+            ],
+            "hint": "Start p, l. a and e work together before the final t sound."
+        },
+        {
+            "word": "spade",
+            "sounds": [
+                "s",
+                "p",
+                "a",
+                "d",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ]
+            ],
+            "audioKeys": [
+                "s",
+                "p",
+                "ai",
+                "d"
+            ],
+            "soundLabels": [
+                "s",
+                "p",
+                "ai",
+                "d"
+            ],
+            "choices": [
+                [
+                    "spoon",
+                    "🥄"
+                ],
+                [
+                    "star",
+                    "⭐"
+                ],
+                [
+                    "spade",
+                    "🪏"
+                ]
+            ],
+            "hint": "You use this tool to dig in the garden. Link a and e."
         },
         {
             "sounds": [
@@ -2924,6 +3668,566 @@ const challenges = {
                 "u",
                 "sh"
             ]
+        },
+        {
+            "word": "cupcake",
+            "sounds": [
+                "c",
+                "u",
+                "p",
+                "c",
+                "a",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ],
+                [
+                    4,
+                    6
+                ],
+                [
+                    5
+                ]
+            ],
+            "audioKeys": [
+                "k",
+                "u",
+                "p",
+                "k",
+                "ai",
+                "k"
+            ],
+            "soundLabels": [
+                "c",
+                "u",
+                "p",
+                "c",
+                "ai",
+                "k"
+            ],
+            "choices": [
+                [
+                    "cupcake",
+                    "🧁"
+                ],
+                [
+                    "teapot",
+                    "🫖"
+                ],
+                [
+                    "popcorn",
+                    "🍿"
+                ]
+            ],
+            "hint": "Blend cup, then cake. Link the a and e in cake."
+        },
+        {
+            "word": "pancake",
+            "sounds": [
+                "p",
+                "a",
+                "n",
+                "c",
+                "a",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ],
+                [
+                    4,
+                    6
+                ],
+                [
+                    5
+                ]
+            ],
+            "audioKeys": [
+                "p",
+                "a",
+                "n",
+                "k",
+                "ai",
+                "k"
+            ],
+            "soundLabels": [
+                "p",
+                "a",
+                "n",
+                "c",
+                "ai",
+                "k"
+            ],
+            "choices": [
+                [
+                    "sandwich",
+                    "🥪"
+                ],
+                [
+                    "pancake",
+                    "🥞"
+                ],
+                [
+                    "pumpkin",
+                    "🎃"
+                ]
+            ],
+            "hint": "Blend pan and cake. The second a works with the final e."
+        },
+        {
+            "word": "snowflake",
+            "sounds": [
+                "s",
+                "n",
+                "ow",
+                "f",
+                "l",
+                "a",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ],
+                [
+                    4
+                ],
+                [
+                    5,
+                    7
+                ],
+                [
+                    6
+                ]
+            ],
+            "audioKeys": [
+                "s",
+                "n",
+                "oa",
+                "f",
+                "l",
+                "ai",
+                "k"
+            ],
+            "soundLabels": [
+                "s",
+                "n",
+                "oa",
+                "f",
+                "l",
+                "ai",
+                "k"
+            ],
+            "choices": [
+                [
+                    "snowman",
+                    "⛄"
+                ],
+                [
+                    "sunflower",
+                    "🌻"
+                ],
+                [
+                    "snowflake",
+                    "❄️"
+                ]
+            ],
+            "hint": "ow sounds as in snow. Link a and e in flake."
+        },
+        {
+            "word": "motorbike",
+            "sounds": [
+                "m",
+                "o",
+                "t",
+                "or",
+                "b",
+                "i",
+                "k",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ],
+                [
+                    4
+                ],
+                [
+                    5,
+                    7
+                ],
+                [
+                    6
+                ]
+            ],
+            "audioKeys": [
+                "m",
+                "oa",
+                "t",
+                "schwa",
+                "b",
+                "igh",
+                "k"
+            ],
+            "soundLabels": [
+                "m",
+                "oa",
+                "t",
+                "uh",
+                "b",
+                "igh",
+                "k"
+            ],
+            "choices": [
+                [
+                    "motorbike",
+                    "🏍️"
+                ],
+                [
+                    "motorcar",
+                    "🚗"
+                ],
+                [
+                    "helicopter",
+                    "🚁"
+                ]
+            ],
+            "hint": "Read motor, then bike. The i and e in bike work together."
+        },
+        {
+            "word": "microscope",
+            "sounds": [
+                "m",
+                "i",
+                "c",
+                "r",
+                "o",
+                "s",
+                "c",
+                "o",
+                "p",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ],
+                [
+                    4
+                ],
+                [
+                    5
+                ],
+                [
+                    6
+                ],
+                [
+                    7,
+                    9
+                ],
+                [
+                    8
+                ]
+            ],
+            "audioKeys": [
+                "m",
+                "igh",
+                "k",
+                "r",
+                "schwa",
+                "s",
+                "k",
+                "oa",
+                "p"
+            ],
+            "soundLabels": [
+                "m",
+                "igh",
+                "c",
+                "r",
+                "uh",
+                "s",
+                "c",
+                "oa",
+                "p"
+            ],
+            "choices": [
+                [
+                    "telescope",
+                    "🔭"
+                ],
+                [
+                    "microscope",
+                    "🔬"
+                ],
+                [
+                    "keyboard",
+                    "⌨️"
+                ]
+            ],
+            "hint": "Break it into micro and scope. Link o and e in scope."
+        },
+        {
+            "word": "telescope",
+            "sounds": [
+                "t",
+                "e",
+                "l",
+                "e",
+                "s",
+                "c",
+                "o",
+                "p",
+                "e"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ],
+                [
+                    4
+                ],
+                [
+                    5
+                ],
+                [
+                    6,
+                    8
+                ],
+                [
+                    7
+                ]
+            ],
+            "audioKeys": [
+                "t",
+                "e",
+                "l",
+                "schwa",
+                "s",
+                "k",
+                "oa",
+                "p"
+            ],
+            "soundLabels": [
+                "t",
+                "e",
+                "l",
+                "uh",
+                "s",
+                "c",
+                "oa",
+                "p"
+            ],
+            "choices": [
+                [
+                    "microscope",
+                    "🔬"
+                ],
+                [
+                    "trumpet",
+                    "🎺"
+                ],
+                [
+                    "telescope",
+                    "🔭"
+                ]
+            ],
+            "hint": "Read tele, then scope. The final o and e make the oa sound."
+        },
+        {
+            "word": "skateboard",
+            "sounds": [
+                "s",
+                "k",
+                "a",
+                "t",
+                "e",
+                "b",
+                "oar",
+                "d"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2,
+                    4
+                ],
+                [
+                    3
+                ],
+                [
+                    5
+                ],
+                [
+                    6
+                ],
+                [
+                    7
+                ]
+            ],
+            "audioKeys": [
+                "s",
+                "k",
+                "ai",
+                "t",
+                "b",
+                "or",
+                "d"
+            ],
+            "soundLabels": [
+                "s",
+                "k",
+                "ai",
+                "t",
+                "b",
+                "or",
+                "d"
+            ],
+            "choices": [
+                [
+                    "skateboard",
+                    "🛹"
+                ],
+                [
+                    "basketball",
+                    "🏀"
+                ],
+                [
+                    "motorbike",
+                    "🏍️"
+                ]
+            ],
+            "hint": "Blend skate, then board. Keep a and e linked in skate."
+        },
+        {
+            "word": "pineapple",
+            "sounds": [
+                "p",
+                "i",
+                "n",
+                "e",
+                "a",
+                "pp",
+                "le"
+            ],
+            "soundGroups": [
+                [
+                    0
+                ],
+                [
+                    1,
+                    3
+                ],
+                [
+                    2
+                ],
+                [
+                    4
+                ],
+                [
+                    5
+                ],
+                [
+                    6
+                ]
+            ],
+            "audioKeys": [
+                "p",
+                "igh",
+                "n",
+                "a",
+                "p",
+                "ul"
+            ],
+            "soundLabels": [
+                "p",
+                "igh",
+                "n",
+                "a",
+                "p",
+                "ul"
+            ],
+            "choices": [
+                [
+                    "apple",
+                    "🍎"
+                ],
+                [
+                    "pineapple",
+                    "🍍"
+                ],
+                [
+                    "watermelon",
+                    "🍉"
+                ]
+            ],
+            "hint": "Blend pine, then apple. The i and e in pine work together."
         },
         {
             "sounds": [

@@ -10,6 +10,7 @@
     <link href="styles.css" rel="stylesheet">
     <script defer src="challenges.js"></script>
     <script defer src="game.js"></script>
+    <script defer src="phonics.js"></script>
     <script defer src="progress.js"></script>
     <script defer src="audio-manifest.js"></script>
     <script defer src="audio-player.js"></script>
@@ -21,11 +22,12 @@
 <header class="site-header">
     <nav aria-label="Main navigation" class="navbar">
         <a aria-label="Amanda Bamford — home" class="logo"
-           href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/">AB<span aria-hidden="true">.</span></a>
+           href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/">AB<span
+                aria-hidden="true">.</span></a>
         <ul class="nav-links">
             <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#about">About</a></li>
             <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#projects">Projects</a></li>
-            <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#hobbies">Making</a></li>
+            <li><a href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/#hobbies">Hobbies</a></li>
         </ul>
         <a class="nav-button" href="https://amanda-bamford-hobby-site.amanda-dee-20-e42.workers.dev/assets/cv.pdf"
            rel="noopener noreferrer" target="_blank">Download CV</a>
@@ -47,14 +49,14 @@
                                                                          class="sf-stage-check">✓</span></span>
                     <span class="sf-stage-name">Little explorers</span>
                     <span class="sf-stage-description">Short words &amp; sound teams</span>
-                    <span class="sf-stage-count">100 challenges</span>
+                    <span class="sf-stage-count">115 challenges</span>
                 </button>
                 <button aria-pressed="false" class="sf-stage-card" data-stage="ks2" type="button">
                     <span class="sf-stage-top"><strong>KS2</strong><span aria-hidden="true"
                                                                          class="sf-stage-check">✓</span></span>
                     <span class="sf-stage-name">Growing adventurers</span>
                     <span class="sf-stage-description">Longer words &amp; spelling patterns</span>
-                    <span class="sf-stage-count">100 challenges</span>
+                    <span class="sf-stage-count">108 challenges</span>
                 </button>
             </div>
         </div>
@@ -94,6 +96,7 @@
                 <div class="sf-challenge">
                     <p class="sf-audio-hint">Tap a sound to hear it.</p>
                     <div aria-label="Word to blend" class="sf-word"><span>sh</span><span>i</span><span>p</span></div>
+                    <p aria-live="polite" class="sf-sound-help" hidden id="sf-sound-help"></p>
                     <button id="sf-sequence" type="button">Listen &amp; blend</button>
                     <span aria-live="polite" class="sf-secret-label" id="sf-audio-status"></span>
                 </div>
@@ -106,7 +109,7 @@
             </div>
             <p aria-live="polite" class="sf-feedback">Take your time. Say the word aloud.</p>
         </main>
-        <footer><span>No timer. Explore at your pace.</span><span>100 challenges in each stage</span></footer>
+        <footer><span>No timer. Explore at your pace.</span><span>115 KS1 · 108 KS2 challenges</span></footer>
     </div>
     <section aria-labelledby="sf-progress-title" class="sf-progress" id="sf-progress">
         <div class="sf-progress-top"><span class="sf-progress-eyebrow">YOUR PROGRESS</span><span id="sf-progress-level">KS1 trail</span>
@@ -114,9 +117,9 @@
         <h2 id="sf-progress-title">Your safari <span>passport.</span></h2>
         <p>Every word is a new discovery. Collect stamps with all your safari friends.</p>
         <div class="sf-passport-card">
-            <div class="sf-passport-totals"><strong id="sf-explored-total">0 of 100 words explored</strong><span
+            <div class="sf-passport-totals"><strong id="sf-explored-total">0 of 115 words explored</strong><span
                     id="sf-next-stamp">1 more word to your next stamp</span></div>
-            <progress aria-label="Words explored" id="sf-passport-progress" max="100" value="0"></progress>
+            <progress aria-label="Words explored" id="sf-passport-progress" max="115" value="0"></progress>
             <div aria-label="Animal passport stamps" class="sf-passport-stamps" id="sf-passport-stamps"></div>
             <p aria-live="polite" class="sf-progress-detail" id="sf-stamp-detail"></p>
         </div>
@@ -174,7 +177,7 @@
                     cube and <strong>e–e</strong> in these.</p></div>
         </details>
         <details>
-            <summary class="cursor-interaction">Sounds, letters and blending - what’s the difference?</summary>
+            <summary class="cursor-interaction">Sounds, letters and blending — what’s the difference?</summary>
             <div class="ph-content"><p>A <strong>phoneme</strong> is a speech sound. A <strong>grapheme</strong> is the
                 letter or letters used to write a sound. A <strong>trigraph</strong> uses three letters for one sound,
                 such as <strong>igh</strong> in night.</p>

@@ -1,6 +1,8 @@
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
-const {createGame} = require('../game');
+const {createGame: createGameModel} = require('../game');
+// Existing rule tests use a repeatable source order; shuffle is tested below.
+const createGame = bank => createGameModel(bank, {random: () => 0.999999});
 const challenges = require('../challenges');
 
 test('an incorrect answer permits another attempt without advancing', () => {
@@ -55,7 +57,7 @@ test('unknown answers cannot complete a challenge', () => {
 
 test('every challenge blends to its word and has exactly one correct picture', () => {
     for (const bank of Object.values(challenges)) {
-        assert.equal(bank.length, 100);
+        assert.ok(bank.length >= 100);
         assert.equal(new Set(bank.map(challenge => challenge.word)).size, bank.length);
         for (const challenge of bank) {
             assert.equal(challenge.sounds.join(''), challenge.word);
@@ -67,4 +69,33 @@ test('every challenge blends to its word and has exactly one correct picture', (
             assert.ok(challenge.choices.every(([label, image]) => label && image));
         }
     }
+});
+
+test('shuffling mixes each stage without repeats, omissions or source mutations', () => {
+    let seed = 42;
+    const random = () => {
+        seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+        return seed / 4294967296;
+    };
+    const original = JSON.stringify(challenges);
+    const game = createGameModel(challenges, {random});
+    for (const stage of ['ks1', 'ks2']) {
+        game.setLevel(stage);
+        const words = [];
+        const splitPositions = [];
+        for (let i = 0; i < challenges[stage].length; i++) {
+            const c = game.challenge;
+            words.push(c.word);
+            if (c.soundGroups) splitPositions.push(i);
+            game.choose(c.word);
+            game.next();
+        }
+        assert.equal(new Set(words).size, challenges[stage].length);
+        assert.deepEqual([...words].sort(), challenges[stage].map(c => c.word).sort());
+        assert.notDeepEqual(words, challenges[stage].map(c => c.word));
+        assert.ok(splitPositions.at(-1) - splitPositions[0] > challenges[stage].length / 2);
+        assert.notEqual(game.challenge.word, words.at(-1));
+        assert.equal(game.index, 0);
+    }
+    assert.equal(JSON.stringify(challenges), original);
 });

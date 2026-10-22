@@ -2,10 +2,23 @@
 (function (scope) {
     'use strict';
 
-    function createGame(challenges) {
+    function createGame(challenges, {random = Math.random} = {}) {
+        function shuffledBank(stage, previousWord = null) {
+            const bank = [...challenges[stage]];
+            for (let position = bank.length - 1; position > 0; position--) {
+                const other = Math.floor(random() * (position + 1));
+                [bank[position], bank[other]] = [bank[other], bank[position]];
+            }
+            if (bank.length > 1 && bank[0].word === previousWord) {
+                [bank[0], bank[1]] = [bank[1], bank[0]];
+            }
+            return bank;
+        }
+
         let level = 'ks1';
         let index = 0;
         let solved = false;
+        let bank = shuffledBank(level);
         return {
             get level() {
                 return level;
@@ -17,7 +30,7 @@
                 return solved;
             },
             get challenge() {
-                return challenges[level][index];
+                return bank[index];
             },
             choose(answer) {
                 if (solved) return 'locked';
@@ -28,7 +41,12 @@
             },
             next() {
                 if (!solved) return false;
-                index = (index + 1) % challenges[level].length;
+                const previousWord = this.challenge.word;
+                index++;
+                if (index === bank.length) {
+                    index = 0;
+                    bank = shuffledBank(level, previousWord);
+                }
                 solved = false;
                 return true;
             },
@@ -37,6 +55,7 @@
                 level = value;
                 index = 0;
                 solved = false;
+                bank = shuffledBank(level);
             }
         };
     }
