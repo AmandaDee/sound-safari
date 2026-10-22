@@ -7,9 +7,10 @@ const types = {
     '.css': 'text/css',
     '.js': 'text/javascript',
     '.svg': 'image/svg+xml',
-    '.mp3': 'audio/mpeg'
+    '.mp3': 'audio/mpeg',
+    '.webp': 'image/webp'
 };
-const publicFiles = new Set(['index.html', 'styles.css', 'challenges.js', 'game.js', 'progress.js', 'progress-ui.js', 'audio-manifest.js', 'audio-player.js', 'app.js', 'favicon.svg']);
+const publicFiles = new Set(['index.html', 'styles.css', 'challenges.js', 'game.js', 'progress.js', 'progress-ui.js', 'audio-manifest.js', 'audio-player.js', 'app.js', 'favicon.svg', 'assets/ollie.webp']);
 const port = Number(process.env.PORT || 8000);
 http.createServer((request, response) => {
     const file = new URL(request.url, 'http://localhost').pathname.slice(1) || 'index.html';

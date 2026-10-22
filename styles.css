@@ -1751,3 +1751,278 @@ body {
         transform: none;
     }
 }
+
+/* Parent help: Ollie welcomes grown-ups; all copy is white or lavender. */
+
+#safari-parent-help {
+    padding: 12px;
+    font-family: Inter, system-ui, sans-serif;
+    color: #ffffff
+}
+
+#safari-parent-help * {
+    box-sizing: border-box
+}
+
+#safari-parent-help .ph-section {
+    background: #080b12;
+    padding: 32px 26px;
+    border-radius: 20px
+}
+
+#safari-parent-help .ph-eyebrow {
+    color: #bba3ff;
+    font-size: 12px;
+    letter-spacing: .12em;
+    font-weight: 600;
+    margin: 0 0 10px
+}
+
+#safari-parent-help h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    letter-spacing: -.04em
+}
+
+#safari-parent-help h2 span {
+    color: #bba3ff
+}
+
+#safari-parent-help .ph-intro {
+    color: #ffffff;
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 0 24px
+}
+
+#safari-parent-help details {
+    background: #141821;
+    border: 1px solid #303543;
+    border-radius: 12px;
+    margin-top: 10px;
+    overflow: hidden
+}
+
+#safari-parent-help summary {
+    padding: 18px;
+    min-height: 56px;
+    font-size: 15px;
+    font-weight: 600;
+    list-style-position: inside
+}
+
+#safari-parent-help summary::marker {
+    color: #bba3ff
+}
+
+#safari-parent-help .ph-content {
+    padding: 0 18px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.7
+}
+
+#safari-parent-help .ph-content p {
+    margin: 0 0 12px
+}
+
+#safari-parent-help .ph-content p:last-child {
+    margin-bottom: 0
+}
+
+#safari-parent-help strong {
+    color: #ffffff
+}
+
+#safari-parent-help .ph-words {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 14px 0
+}
+
+#safari-parent-help .ph-word {
+    font-size: 27px;
+    letter-spacing: .06em;
+    white-space: nowrap;
+    color: #ffffff
+}
+
+#safari-parent-help .ph-word b {
+    color: #c5b3ff;
+    border-bottom: 2px solid #a78bfa;
+    padding-bottom: 3px
+}
+
+#safari-parent-help .ph-example {
+    border-left: 3px solid #a78bfa;
+    padding: 4px 0 4px 14px;
+    margin: 14px 0
+}
+
+#safari-parent-help .ph-split {
+    position: relative;
+    display: inline-flex;
+    gap: 10px;
+    padding-bottom: 18px;
+    font-size: 30px;
+    color: #ffffff
+}
+
+#safari-parent-help .ph-split .ph-linked {
+    color: #c5b3ff;
+    font-weight: 700
+}
+
+#safari-parent-help .ph-split::after {
+    content: "";
+    position: absolute;
+    left: 31px;
+    right: 0;
+    bottom: 6px;
+    height: 11px;
+    border: 2px solid #a78bfa;
+    border-top: 0;
+    border-radius: 0 0 10px 10px
+}
+
+#safari-parent-help ul {
+    padding-left: 20px;
+    margin: 0
+}
+
+#safari-parent-help li + li {
+    margin-top: 8px
+}
+
+#safari-parent-help .ph-note {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.6
+}
+
+#safari-parent-help .ph-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #303543;
+    font-size: 12px;
+    color: #ffffff
+}
+
+@media (max-width: 420px) {
+    #safari-parent-help .ph-section {
+        padding: 24px 16px
+    }
+
+    #safari-parent-help h2 {
+        font-size: 25px
+    }
+}
+
+
+#safari-parent-help .ph-section {
+    color: #ffffff;
+    color-scheme: dark
+}
+
+#safari-parent-help h2, #safari-parent-help summary {
+    color: #ffffff
+}
+
+#safari-parent-help .ph-header {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 24px
+}
+
+#safari-parent-help .ph-header-copy {
+    flex: 1;
+    min-width: 0
+}
+
+#safari-parent-help .ph-header .ph-intro {
+    margin-bottom: 0
+}
+
+#safari-parent-help .ph-mascot {
+    position: relative;
+    width: 150px;
+    height: 204px;
+    flex: 0 0 150px;
+    overflow: hidden;
+    margin: 0
+}
+
+#safari-parent-help .ph-mascot img {
+    position: absolute;
+    width: 250px;
+    max-width: none;
+    height: 250px;
+    left: -50px;
+    top: -38px;
+    object-fit: contain
+}
+
+#safari-parent-help .ph-mascot-name {
+    color: #ffffff;
+    background: #141821;
+    border-radius: 20px;
+    padding: 7px 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+    margin: 0
+}
+
+#safari-parent-help .ph-content li {
+    color: #ffffff
+}
+
+#safari-parent-help .ph-footer span {
+    color: #ffffff
+}
+
+@media (max-width: 520px) {
+    #safari-parent-help .ph-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px
+    }
+
+    #safari-parent-help .ph-mascot {
+        align-self: center
+    }
+
+    #safari-parent-help .ph-header-copy {
+        width: 100%
+    }
+}
+
+#safari-parent-help {
+    max-width: 1000px;
+    margin: 36px auto 0;
+    padding: 0;
+    color: #ffffff
+}
+
+#safari-parent-help .ph-section {
+    padding: 28px 24px;
+    border: 1px solid #303543
+}
+
+#safari-parent-help summary:focus-visible {
+    outline: 3px solid #bba3ff;
+    outline-offset: -4px
+}

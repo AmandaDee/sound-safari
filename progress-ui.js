@@ -89,9 +89,6 @@
         get('#sf-pattern-detail-title').textContent = selected?.found ? `You’ve found ${selected.pattern}` : `Still to discover: ${selected?.pattern || ''}`;
         get('#sf-pattern-detail-words').textContent = selected
             ? `${selected.found ? 'Explored in' : 'Look out for'}: ${(selected.found ? selected.foundWords : selected.words).join(', ')}.` : 'Keep exploring to discover new sound patterns.';
-        get('#sf-progress-storage').textContent = state.persistent
-            ? 'Saved in this browser · Separate KS1 and KS2 trails · Shared by players using this browser'
-            : 'Progress is kept for this visit only; saving in this browser is unavailable.';
     }
 
     root.querySelectorAll('[data-pattern-group]').forEach(button => {

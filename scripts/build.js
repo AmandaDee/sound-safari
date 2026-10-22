@@ -13,4 +13,5 @@ for (const file of fs.readdirSync(path.join(root, 'audio'))) {
         fs.copyFileSync(path.join(root, 'audio', file), path.join(output, 'audio', file));
     }
 }
+fs.cpSync(path.join(root, 'assets'), path.join(output, 'assets'), {recursive: true});
 console.log('Static website built in dist/');
